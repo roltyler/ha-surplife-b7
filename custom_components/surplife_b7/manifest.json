@@ -1,0 +1,11 @@
+{
+  "domain": "surplife_b7",
+  "name": "Surplife B7 Diagnostics",
+  "version": "0.1.0",
+  "documentation": "https://github.com/roltyler/ha-surplife-b7",
+  "codeowners": [],
+  "config_flow": true,
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": []
+}
