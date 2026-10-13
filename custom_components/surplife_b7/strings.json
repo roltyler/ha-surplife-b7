@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Surplife B7 controller",
+        "description": "Read-only diagnostics. No lighting commands will be sent.",
+        "data": { "host": "Controller IP address", "port": "TCP port" }
+      }
+    },
+    "error": { "cannot_connect": "Could not read a supported controller status response." },
+    "abort": { "already_configured": "This controller is already configured." }
+  }
+}
