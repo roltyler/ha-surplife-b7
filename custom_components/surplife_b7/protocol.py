@@ -41,3 +41,14 @@ async def read_status(host: str, port: int) -> ControllerStatus:
     finally:
         writer.close()
         await writer.wait_closed()
+
+async def write_power(host: str, port: int, on: bool) -> None:
+    """Send verified B7 power command; caller refreshes state afterwards."""
+    command = bytes((0x71, 0x23 if on else 0x24, 0x0F))
+    _reader, writer = await asyncio.wait_for(asyncio.open_connection(host, port), timeout=5)
+    try:
+        writer.write(command)
+        await asyncio.wait_for(writer.drain(), timeout=3)
+    finally:
+        writer.close()
+        await writer.wait_closed()
