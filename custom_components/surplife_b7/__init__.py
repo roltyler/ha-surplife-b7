@@ -1,4 +1,4 @@
-"""Surplife B7 read-only diagnostic integration."""
+"""Surplife B7 Home Assistant integration."""
 from __future__ import annotations
 from datetime import timedelta
 import logging
@@ -9,7 +9,7 @@ from .const import DOMAIN, DEFAULT_PORT
 from .protocol import read_status
 
 _LOGGER = logging.getLogger(__name__)
-PLATFORMS = ["sensor"]
+PLATFORMS = ["sensor", "light"]
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     host = entry.data["host"]
